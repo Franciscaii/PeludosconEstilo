@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Carrito</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            actualizarCarrito();
+
+            function actualizarCarrito() {
+                let salida = "";
+                let totalGeneral = 0;
+
+                if (carrito.length > 0) {
+                    for (let [index, item] of carrito.entries()) {
+                        salida += "<div class='tabla'>" +
+                                    "<img id='idmini' src='img/" + item.foto + "' width='100' height='100'><br>" +
+                                    "ID: " + item.id + "<br>" +
+                                    "Nombre Producto: " + item.nombre + "<br>" +
+                                    "Precio: $" + item.precio + "<br>" +
+                                    "Cantidad: <input type='number' class='cantidad' data-index='" + index + "' value='" + item.cantidad + "' min='1' max='" + item.stock + "'><br>" +
+                                    "Total: $" + item.total + "<br>" +
+                                    "<button class='eliminar' data-index='" + index + "'>Eliminar</button>" +
+                                  "</div><br>";
+                        totalGeneral += item.total;
+                    }
+                    salida += "<h3>Total General: $" + totalGeneral + "</h3>";
+                    salida += "<button id='comprar'>Comprar</button>";
+                } else {
+                    salida = "<p>El carrito está vacío.</p>";
+                }
+
+                document.getElementById("carritoDetalles").innerHTML = salida;
+                agregarEventListeners();
+            }
+            // busca eliminar los producto donde se apreto el boton eliminar
+            function agregarEventListeners() {
+                document.querySelectorAll('.eliminar').forEach(button => {
+                    button.addEventListener('click', function() {
+                        let index = this.getAttribute('data-index');
+                        carrito.splice(index, 1);
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                        actualizarCarrito();
+                    });
+                });
+
+                // se almacena la cantidad seleccionada por el usuario
+                // y luego se saca el total a pagar por el producto y se almacena
+                // en carrito y se actualiza carrito
+
+                document.querySelectorAll('.cantidad').forEach(input => {
+                    input.addEventListener('input', function() {
+                        let index = this.getAttribute('data-index');
+                        let nuevaCantidad = parseInt(this.value);
+                        if (isNaN(nuevaCantidad) || nuevaCantidad < 1) {
+                            nuevaCantidad = 1;
+                            this.value = 1;
+                        }
+                        carrito[index].cantidad = nuevaCantidad;
+                        carrito[index].total = nuevaCantidad * carrito[index].precio;
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                        actualizarCarrito();
+                    });
+                });
+
+                let comprarButton = document.getElementById("comprar");
+                if (comprarButton) {
+                    comprarButton.addEventListener('click', function() {
+                        let perros = JSON.parse(localStorage.getItem("perros"));
+                        // Iterar sobre los productos en el carrito
+                        carrito.forEach(item => {
+                            let producto = perros.find(p => p.id === item.id);
+                            if (producto) {
+                                producto.stock -= item.cantidad;
+                            }
+                        });
+
+                        localStorage.setItem("perros", JSON.stringify(perros));
+
+                        let ventas = JSON.parse(localStorage.getItem("ventas")) || [];
+                        ventas = ventas.concat(carrito);
+                        localStorage.setItem("ventas", JSON.stringify(ventas));
+
+                        // Limpiar el carrito
+                        localStorage.removeItem("carrito");
+
+                        // Redirigir a la página de ver ventas
+                        window.location.href = "verventas.html";
+                    });
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <fieldset id="a">
+            <ul class="nav-buttons">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="listarproductos.html">Listar Productos</a></li>
+                <li><a href="verventas.html">Ver Ventas</a></li>
+            </ul>
+        </fieldset>
+    </nav>
+
+    <main>
+        <fieldset class="caja1">
+            <legend><h1>Carrito de Compras</h1></legend>
+            <div id="carritoDetalles"></div>
+        </fieldset>
+    </main>
+
+    <footer>
+        <fieldset>
+            <ul>
+                <li>Fono: +56 9 5851 3513</li>
+                <li>Correo: francisca.figueroa16@inacapmail.cl</li>
+            </ul>
+        </fieldset>
+    </footer>
+</body>
+</html>

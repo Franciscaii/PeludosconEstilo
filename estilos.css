@@ -1,0 +1,225 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to bottom, rgb(38, 171, 233), rgb(148, 33, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer fieldset {
+    background-color: rgba(48, 6, 165, 0.473);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    margin-top: 50%;
+
+}
+
+.centrar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.caja {
+    background-color: rgba(0, 0, 0, 0.473);
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 80px rgb(95, 255, 242);
+    margin: auto;
+    margin-top: 15%;
+
+
+}
+/* mis productos */
+
+
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+#img {
+    width: 670px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.caja3 {
+    background-color: rgba(54, 52, 54, 0.618);
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+#Descrip {
+    background-color: rgba(0, 0, 0, 0.473);
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 80px rgb(95, 255, 242);
+}
+
+#fin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.nav-buttons {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-buttons li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.nav-buttons li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#a {
+    background-color: rgba(0, 0, 0, 0.473);
+    color: white;
+    text-align: center;
+}
+
+.pie {
+    background-color: rgba(48, 6, 165, 0.473);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    position: relative; /* Cambiado de fixed a relative */
+    bottom: 0;
+    margin-top: auto; /* Asegura que el pie de página se empuje al final */
+    box-sizing: border-box;
+}
+.caja2 {
+    background-color: rgba(4, 24, 152, 0.724);
+    width: 400px;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.caja1 {
+    background-color: rgba(157, 25, 95, 0.562);
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 0 20px 10px rgb(238, 186, 232);
+}
+
+.slider-box {
+    width: 800px;
+    height: 800px;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-box li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.texto {
+    position: absolute;
+    text-align: center;
+    padding: 0 250px;
+    top: 250px;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #4dff11, 1px 1px 0 #000, -1px 1px 0 #df1919;
+}
+
+.texto h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.slider-box img {
+    width: 80%;
+    height: 80%;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+.tabla {
+    display: inline-block;
+}
+
+.alineacion {
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    color: aqua;
+}
+
+#idmini{
+    width : 100px;
+    height : 100px;
+}
+
+.tabla img{
+    width : 200px;
+    height : 200px;
+    border-radius: 10px;
+}
+

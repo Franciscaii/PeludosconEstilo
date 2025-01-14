@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Producto</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (id) {
+                let perros = JSON.parse(localStorage.getItem("perros"));
+                let perro = perros.find(p => p.id == id);
+
+                if (perro) {
+                    document.getElementById("productoDetalles").innerHTML = 
+                        "<h2>Detalles del Producto</h2>" +
+                        "<img id='idtamaño' src='img/" + perro.foto + "'><br>" +
+                        "ID: " + perro.id + "<br>" +
+                        "Nombre Producto: " + perro.nombre + "<br>" +
+                        "Stock: " + perro.stock + "<br>" +
+                        "Precio: $" + perro.precio + "<br>" +
+                        "Cantidad deseada: <input type='number' id='idcantidad' max='" + perro.stock + "' min='0'><br><br>" +
+                        "Total: $<input type='number' id='idtotalproducto' readonly value='0'><br><br>" +
+                        "<button id='idagregaracarrito'>Agregar al carrito</button>";
+
+                    // Añadir un event listener para el input de cantidad
+                    document.getElementById("idcantidad").addEventListener("input", function() {
+                        let cantidad = parseInt(this.value);
+                        let total = cantidad * perro.precio;
+                        if (isNaN(total) || total < 0) total = 0; // Asegurar que el total sea 0 si la entrada es inválida
+                        document.getElementById("idtotalproducto").value = total;
+                    });
+
+                    document.getElementById("idagregaracarrito").addEventListener("click", function() {
+                        let cantidad = parseInt(document.getElementById("idcantidad").value);
+                        if (cantidad > 0) {
+                            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                            let item = {
+                                id: perro.id,
+                                nombre: perro.nombre,
+                                precio: perro.precio,
+                                cantidad: cantidad,
+                                stock:perro.stock,
+                                total: cantidad * perro.precio,
+                                foto: perro.foto
+                            };
+                            carrito.push(item);
+                            localStorage.setItem("carrito", JSON.stringify(carrito));
+                            alert("Producto añadido al carrito");
+                        } else {
+                            alert("Seleccione una cantidad válida.");
+                        }
+                    });
+                } else {
+                    document.getElementById("productoDetalles").innerHTML = "Producto no encontrado.";
+                }
+            } else {
+                document.getElementById("productoDetalles").innerHTML = "No se ha especificado ningún producto.";
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <fieldset id="a">
+            <ul class="nav-buttons">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="listarproductos.html">Listar Productos</a></li>
+                <li><a href="vercarrito.html">Ver Carrito</a></li>
+                <li><a href="verventas.html">Ver Ventas</a></li>
+            </ul>
+        </fieldset>
+    </nav>
+
+    <main>
+        <fieldset class="caja1">
+            <legend><h1>Ver Producto</h1></legend>
+            <div id="productoDetalles"></div>
+        </fieldset>
+    </main>
+
+    <footer>
+        <fieldset>
+            <ul>
+                <li>Fono: +56 9 5851 3513</li>
+                <li>Correo: francisca.figueroa16@inacapmail.cl</li>
+            </ul>
+        </fieldset>
+    </footer>
+</body>
+</html>

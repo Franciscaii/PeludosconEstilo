@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Ventas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let ventas = JSON.parse(localStorage.getItem("ventas")) || [];
+            actualizarVentas();
+
+            function actualizarVentas() {
+                let salida = "";
+                let totalVentas = 0;
+
+                if (ventas.length > 0) {
+                    for (let venta of ventas) {
+                        salida += "<div class='tabla'>" +
+                                    "<img src='img/" + venta.foto + "' width='100' height='100'><br>" +
+                                    "ID: " + venta.id + "<br>" +
+                                    "Nombre Producto: " + venta.nombre + "<br>" +
+                                    "Precio: $" + venta.precio + "<br>" +
+                                    "Cantidad: " + venta.cantidad + "<br>" +
+                                    "Total: $" + venta.total + "<br>" +
+                                  "</div><br>";
+                        totalVentas += venta.total;
+                    }
+                    salida += "<h3>Total de Ventas: $" + totalVentas + "</h3>";
+                } else {
+                    salida = "<p>No hay ventas registradas.</p>";
+                }
+
+                document.getElementById("ventasDetalles").innerHTML = salida;
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <fieldset id="a">
+            <ul class="nav-buttons">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="listarproductos.html">Listar Productos</a></li>
+                <li><a href="vercarrito.html">Ver Carrito</a></li>
+                <li><a href="verventas.html">Ver Ventas</a></li>
+            </ul>
+        </fieldset>
+    </nav>
+
+    <main>
+        <fieldset class="caja1">
+            <legend><h1>Ver Ventas</h1></legend>
+            <div id="ventasDetalles"></div>
+        </fieldset>
+    </main>
+
+    <footer>
+        <fieldset>
+            <ul>
+                <li>Fono: +56 9 5851 3513</li>
+                <li>Correo: francisca.figueroa16@inacapmail.cl</li>
+            </ul>
+        </fieldset>
+    </footer>
+</body>
+</html>

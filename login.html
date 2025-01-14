@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <fieldset class="caja">
+        <legend>Login</legend>
+        <div>Usuario nombre</div> <br>
+        <input type="text" name="usuario" id="idusuarionombre" placeholder="user"><br>
+        <div>Contraseña</div><br>
+        <input type="password" name="contraseña" id="idcontraseña" placeholder="123">
+        <br><br>
+        <div id="idTexto"></div>
+        <br><br>
+        <button onclick="validarusuario()">Enviar</button>
+        
+    </fieldset>
+    <script>
+	
+	    class Usuario{
+				
+		    constructor(nombre,contraseña){
+				this.nombre = nombre;
+				this.contraseña = contraseña;
+			};
+			getNombre(){
+			   return this.nombre;
+			};
+
+			getContraseña(){
+			   return this.contraseña;
+			};
+			
+        };
+        
+	    let user1= new Usuario("user","123");
+        
+        let usuarios=[user1];
+        
+		if (typeof(Storage) !== "undefined") {
+            alert("bien, tiene localstorage")
+		}else{
+            alert("NO tiene localstorage")
+		}
+        
+	    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        
+
+        function validarusuario() {
+            let valuenombre = document.getElementById("idusuarionombre").value;
+            let valuecontraseña = document.getElementById("idcontraseña").value;
+            let usuarioss = JSON.parse(localStorage.getItem("usuarios"));
+            let usuarioValido = usuarioss.find(user => user1.nombre === valuenombre && user1.contraseña === valuecontraseña);
+
+            if (usuarioValido) {
+                document.getElementById("idTexto").innerHTML = "Usuario sí existe";
+                window.location.href = 'CargarDatosEnLS.html';
+            } else {
+                document.getElementById("idTexto").innerHTML = "Error, usuario no existe o contraseña incorrecta";
+            }
+        }
+    </script>
+        
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Productos</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script>
+        let perros = JSON.parse(localStorage.getItem("perros"));
+
+        function listar(){
+            let salida = ""; 
+            for(let perro of perros){
+                salida += "<div class='tabla'> <img src='img/" + perro.foto + "'></div> " +
+                          "<div class='alineacion'>"+"ID: " + perro.id + "<br>" +
+                          "Nombre Producto: " + perro.nombre + "<br>" +
+                          "Stock: " + perro.stock + "<br><button><a href='verproducto.html?id=" + perro.id + "'>Ver Producto</a></button></div><br><br>";
+            }       
+            document.getElementById("idTexto").innerHTML = salida;
+        }
+        window.onload = listar;
+    </script>
+</head>
+<body>
+    <nav>
+        <fieldset id="a">
+            <ul class="nav-buttons">
+                <li><a href="vercarrito.html">Ver Carrito</a></li>
+                <li><a href="verventas.html">Ver Ventas</a></li>
+            </ul> 
+        </fieldset>
+    </nav>
+
+    <main>
+        <fieldset class="caja1">
+            <legend><h1>Listado de Productos</h1></legend>
+            <div id="idTexto"></div>
+        </fieldset>
+    </main>
+
+    <footer>
+        <fieldset>
+            <ul>
+                <li>Fono: +56 9 5851 3513</li>
+                <li>Correo: francisca.figueroa16@inacapmail.cl</li>
+            </ul>
+        </fieldset>
+    </footer>
+</body>
+</html>
