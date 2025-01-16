@@ -41,6 +41,14 @@ Este proyecto es una página web desarrollada utilizando **HTML**, **CSS** y un 
    - También se incluye una imagen representativa del producto para facilitar su identificación.
    - En la parte inferior, se muestra el **Total de Ventas**, que corresponde a la suma de los totales de todos los productos comprados.
 
+
+<img src="" alt="Captura de pantalla" width="600"/>
+<img src="" alt="Captura de pantalla" width="600"/>
+<img src="" alt="Captura de pantalla" width="600"/>
+<img src="" alt="Captura de pantalla" width="600"/>
+<img src="" alt="Captura de pantalla" width="600"/>
+
+
 ---
 
 ## 🚀 Tecnologías Utilizadas
