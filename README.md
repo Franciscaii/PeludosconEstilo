@@ -1,6 +1,6 @@
 # 🐾 Tienda de Ropa para Perros - Página Web
 
-Este proyecto es una página web desarrollada utilizando **HTML**, **CSS** y un poco de **JavaScript**. La aplicación está diseñada para ofrecer una experiencia de compra en línea enfocada en ropa para perros. A continuación, se describen las principales funcionalidades y características del sitio.
+Este proyecto es una página web desarrollada utilizando **HTML**, **CSS** ,**JavaScript** y **Local Storage**. La aplicación está diseñada para ofrecer una experiencia de compra en línea enfocada en ropa para perros. A continuación, se describen las principales funcionalidades y características del sitio.
 
 ---
 
@@ -42,11 +42,11 @@ Este proyecto es una página web desarrollada utilizando **HTML**, **CSS** y un 
    - En la parte inferior, se muestra el **Total de Ventas**, que corresponde a la suma de los totales de todos los productos comprados.
 
 
-<img src="" alt="Captura de pantalla" width="600"/>
-<img src="" alt="Captura de pantalla" width="600"/>
-<img src="" alt="Captura de pantalla" width="600"/>
-<img src="" alt="Captura de pantalla" width="600"/>
-<img src="" alt="Captura de pantalla" width="600"/>
+<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212322.png" alt="Captura de pantalla" width="600"/>
+<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212715.png" alt="Captura de pantalla" width="600"/>
+<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212738.png" alt="Captura de pantalla" width="600"/>
+<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212815.png" alt="Captura de pantalla" width="600"/>
+<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212833.png" alt="Captura de pantalla" width="600"/>
 
 
 ---
@@ -56,3 +56,4 @@ Este proyecto es una página web desarrollada utilizando **HTML**, **CSS** y un 
 - **HTML**: Estructura base del sitio web.
 - **CSS**: Diseño y estilos visuales para hacer el sitio atractivo y fácil de usar.
 - **JavaScript**: Funcionalidades dinámicas como la interacción con el carrito, el login y el historial de compras.
+- **Local Storage**:Utilizado para almacenar datos como el carrito de compras, historial de compras y credenciales básicas en el navegador del usuario
