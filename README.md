@@ -42,12 +42,15 @@ Este proyecto es una página web desarrollada utilizando **HTML**, **CSS** ,**Ja
    - En la parte inferior, se muestra el **Total de Ventas**, que corresponde a la suma de los totales de todos los productos comprados.
 
 
-<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212322.png" alt="Captura de pantalla" width="600"/>
-<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212715.png" alt="Captura de pantalla" width="600"/>
-<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212738.png" alt="Captura de pantalla" width="600"/>
-<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212815.png" alt="Captura de pantalla" width="600"/>
-<img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212833.png" alt="Captura de pantalla" width="600"/>
+## 🖼️ Imágenes de la Tienda
 
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212322.png" alt="Captura de pantalla" width="48%" />
+  <img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212715.png" alt="Captura de pantalla" width="48%" />
+  <img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212738.png" alt="Captura de pantalla" width="48%" />
+  <img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212815.png" alt="Captura de pantalla" width="48%" />
+  <img src="https://github.com/Franciscaii/PeludosconEstilo/blob/main/Captura%20de%20pantalla%202025-01-16%20212833.png" alt="Captura de pantalla" width="48%" />
+</div>
 
 ---
 
